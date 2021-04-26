@@ -1,16 +1,16 @@
-int ledPin = 24;
-int ledPin2 = 25;
+int ledPin[4] = {24, 25, 26, 27};
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  pinMode(ledPin2, OUTPUT);
+  for (int i = 0; i < 4; i++) {
+    pinMode(ledPin[i], OUTPUT);
+  }
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);
-  digitalWrite(ledPin2, HIGH);
-  delay(500);
-  digitalWrite(ledPin, LOW);
-  digitalWrite(ledPin2, LOW);
-  delay(500);  
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(ledPin[i], HIGH);
+    delay(500);
+    digitalWrite(ledPin[i], LOW);
+    delay(500);
+  }
 }
